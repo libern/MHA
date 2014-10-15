@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets"
         xmlns:gap="http://phonegap.com/ns/1.0"
-        id="com.audero.free.utility.whereiparkedmycar"
+        id="com.rp.mha.crime.trends.map"
         version="1.0.0">
 
     <name>Crime Trends Map</name>
 
-    <description>"Where I parked my car" is an application for mobile devices that lets you bookmark where you parked
-        your car, and then find a route to return to it. This application is useful if you don't have a good memory or
-        if you're in a foreign city. In addition, "Where I parked my car" will also save a log of your saved positions
-        (up to 50), so that you can retrieve a location for future use. The list allows you to see the position on a
-        map, and you can also to delete one or more old locations.
+    <description>Crime Trends Map is a simplest and easiest way to observe the crime status in Singapore. It provides
+        Crimes Map, Crimes Heat Map, All NPCs, Crime Statistics, Crime Prevention Tips, Latest crime status, etc. You
+        can view the crimes around your neighborhood. The crimes are always being updated.
     </description>
 
-    <author href="http://im.someline.com" email="aurelioderosa@gmail.com">Aurelio De Rosa</author>
+    <author href="http://im.someline.com" email="libern@someline.com">Libern Lin</author>
+    <author href="http://im.someline.com" email="lester@someline.com">Lester Yap</author>
+    <author href="http://im.someline.com" email="andrew@someline.com">Andrew Chua</author>
+    <author href="http://im.someline.com" email="ivy@someline.com">Fang LingQing</author>
 
     <icon src="icon.png" gap:role="default"/>
 
