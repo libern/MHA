@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+        xmlns:gap="http://phonegap.com/ns/1.0"
+        id="com.rp.mha.crime.trends.map"
+        version="1.0.0">
+
+    <name>Crime Trends Map</name>
+
+    <description>Crime Trends Map is a simplest and easiest way to observe the crime status in Singapore. It provides
+        Crimes Map, Crimes Heat Map, All NPCs, Crime Statistics, Crime Prevention Tips, Latest crime status, etc. You
+        can view the crimes around your neighborhood. The crimes are always being updated.
+    </description>
+
+    <author href="http://im.someline.com" email="libern@someline.com">Libern Lin</author>
+    <author href="http://im.someline.com" email="lester@someline.com">Lester Yap</author>
+    <author href="http://im.someline.com" email="andrew@someline.com">Andrew Chua</author>
+    <author href="http://im.someline.com" email="ivy@someline.com">Fang LingQing</author>
+
+    <icon src="icon.png" gap:role="default"/>
+
+    <feature name="http://api.phonegap.com/1.0/network"/>
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+
+    <preference name="phonegap-version" value="3.5.0"/>
+    <preference name="target-device" value="universal"/>
+    <preference name="orientation" value="portrait"/>
+    <preference name="fullscreen" value="true"/>
+    <!--<preference name="orientation" value="landscape" />-->
+
+    <!-- Splash Screens -->
+    <gap:splash src="splash.png"/>
+    <gap:splash src="images/splash-160x220.png" gap:platform="android" gap:density="ldpi"/>
+    <gap:splash src="images/splash-220x330.png" gap:platform="android" gap:density="mdpi"/>
+    <gap:splash src="images/splash-450x650.png" gap:platform="android" gap:density="hdpi"/>
+</widget>
