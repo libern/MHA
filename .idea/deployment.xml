@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="Localhost" autoUploadExternalChanges="true">
+    <serverData>
+      <paths name="Localhost">
+        <serverdata>
+          <mappings>
+            <mapping deploy="Crime Trends Map" local="$PROJECT_DIR$" web="/Crime Trends Map" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
+

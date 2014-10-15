@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Crime Trends Map</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="vendor/Ratchet/css/ratchet.css" rel="stylesheet">
+    <link href="css/mha.css" rel="stylesheet">
+
+    <script src="vendor/jQuery/jquery-1.11.1.min.js"></script>
+    <!-- Include the compiled Ratchet JS -->
+    <script src="vendor/Ratchet/js/ratchet.js"></script>
+    <script src="vendor/Ratchet/js/fingerblast.js"></script>
+    <script type='text/javascript'>
+        $(function () {
+            var fb = new FingerBlast('body');
+        });
+    </script>
+</head>
+<body id="MHA">
+
+<!-- Make sure all your bars are the first things in your <body> -->
+<header class="bar bar-nav">
+    <a class="icon icon-plus pull-right" href="tips_add.html" data-transition="slide-in"></a>
+    <h1 class="title">Prevention Tips</h1>
+</header>
+
+<!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+<div class="content">
+    <div class="topic-icon-area">
+        <img src="images/tips_icon.png" alt="Tips Icon"/>
+    </div>
+    <ul class="table-view">
+        <li class="table-view-cell">
+            <a class="navigate-right">
+                Item 1
+            </a>
+        </li>
+        <li class="table-view-cell">
+            <a class="navigate-right">
+                Item 2
+            </a>
+        </li>
+        <li class="table-view-cell">
+            <a class="navigate-right">
+                Item 3
+            </a>
+        </li>
+        <li class="table-view-cell">
+            <a class="navigate-right">
+                Item 4
+            </a>
+        </li>
+    </ul>
+</div>
+
+<nav class="bar bar-tab">
+    <a class="tab-item" href="crimes.html">
+        <span class="icon icon-crimes"></span>
+        <span class="tab-label">Crimes</span>
+    </a>
+    <a class="tab-item" href="statistics.html">
+        <span class="icon icon-statistics"></span>
+        <span class="tab-label">Statistics</span>
+    </a>
+    <a class="tab-item active" href="tips.html">
+        <span class="icon icon-tips"></span>
+        <span class="tab-label">Tips</span>
+    </a>
+    <a class="tab-item" href="trends.html">
+        <span class="icon icon-trends"></span>
+        <span class="tab-label">Trends</span>
+    </a>
+</nav>
+
+</body>
+</html>

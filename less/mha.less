@@ -1,0 +1,90 @@
+// By Libern
+
+#MHA {
+  .bar-nav {
+    background: transparent url(../images/navigation_bar_bg.png);
+    border-bottom: none;
+    .title {
+      color: #ffffff;
+    }
+    //    a {
+    //        color: #428bca;
+    //      &:hover, &:active {
+    //      color: #ffffff;
+    //      }
+    //    }
+  }
+  .bar-tab {
+    border-top: none;
+    background-image: url(../images/tab_bar_bg.png);
+    .tab-item {
+      color: #ffffff;
+      &.active {
+        background-image: url(../images/tab_bar_item_selected_bg.png);
+      }
+      .icon {
+        &.icon-crimes {
+          background-image: url(../images/tab_bar_item_crimes.png);
+        }
+        &.icon-statistics {
+          background-image: url(../images/tab_bar_item_statistics.png);
+        }
+        &.icon-tips {
+          background-image: url(../images/tab_bar_item_tips.png);
+        }
+        &.icon-trends {
+          background-image: url(../images/tab_bar_item_trends.png);
+        }
+      }
+    }
+  }
+  .content {
+    background-color: #3C4C54;
+    .topic-icon-area {
+      width: 148px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 40px;
+      height: 220px;
+    }
+    .table-view {
+//      background-color: transparent;
+      border-top: none;
+      border-bottom: none;
+      .media-body {
+        line-height: 24px;
+      }
+      .table-view-cell {
+        border-top: none;
+        border-bottom: 1px solid #b6bcbe;
+        &:last-child {
+          border-bottom: none;
+        }
+//        background: -webkit-linear-gradient(#F8F8F8, #EFEFEF);
+//        background: -o-linear-gradient(#F8F8F8, #EFEFEF);
+//        background: -moz-linear-gradient(#F8F8F8, #EFEFEF);
+        background: linear-gradient(#F8F8F8, #EFEFEF);
+        //        background-image: url(../images/table_view_cell_bg.png);
+        > a:not(.btn) {
+//          background-color: transparent;
+          &:active {
+            color: #ffffff;
+//            background-image: url(../images/table_view_cell_highlighted_bg.png);
+            background: linear-gradient(#3B7AAF, #2C6BA0);
+            &::after {
+              color: #ffffff;
+            }
+            .trends-body p {
+              color: #ffffff;
+            }
+          }
+        }
+        .trends-body {
+          .location {
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+  }
+}

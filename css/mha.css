@@ -1,0 +1,67 @@
+#MHA .bar-nav {
+  background: transparent url(../images/navigation_bar_bg.png);
+  border-bottom: none;
+}
+#MHA .bar-nav .title {
+  color: #ffffff;
+}
+#MHA .bar-tab {
+  border-top: none;
+  background-image: url(../images/tab_bar_bg.png);
+}
+#MHA .bar-tab .tab-item {
+  color: #ffffff;
+}
+#MHA .bar-tab .tab-item.active {
+  background-image: url(../images/tab_bar_item_selected_bg.png);
+}
+#MHA .bar-tab .tab-item .icon.icon-crimes {
+  background-image: url(../images/tab_bar_item_crimes.png);
+}
+#MHA .bar-tab .tab-item .icon.icon-statistics {
+  background-image: url(../images/tab_bar_item_statistics.png);
+}
+#MHA .bar-tab .tab-item .icon.icon-tips {
+  background-image: url(../images/tab_bar_item_tips.png);
+}
+#MHA .bar-tab .tab-item .icon.icon-trends {
+  background-image: url(../images/tab_bar_item_trends.png);
+}
+#MHA .content {
+  background-color: #3C4C54;
+}
+#MHA .content .topic-icon-area {
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+  height: 220px;
+}
+#MHA .content .table-view {
+  border-top: none;
+  border-bottom: none;
+}
+#MHA .content .table-view .media-body {
+  line-height: 24px;
+}
+#MHA .content .table-view .table-view-cell {
+  border-top: none;
+  border-bottom: 1px solid #b6bcbe;
+  background: linear-gradient(#f8f8f8, #efefef);
+}
+#MHA .content .table-view .table-view-cell:last-child {
+  border-bottom: none;
+}
+#MHA .content .table-view .table-view-cell > a:not(.btn):active {
+  color: #ffffff;
+  background: linear-gradient(#3b7aaf, #2c6ba0);
+}
+#MHA .content .table-view .table-view-cell > a:not(.btn):active::after {
+  color: #ffffff;
+}
+#MHA .content .table-view .table-view-cell > a:not(.btn):active .trends-body p {
+  color: #ffffff;
+}
+#MHA .content .table-view .table-view-cell .trends-body .location {
+  margin-left: 15px;
+}
