@@ -53,6 +53,9 @@
 #MHA .content .table-view .media-body {
   line-height: 24px;
 }
+#MHA .content .table-view.list-item-margin .table-view-cell {
+  margin-bottom: 10px;
+}
 #MHA .content .table-view .table-view-cell {
   border-top: none;
   border-bottom: 1px solid #b6bcbe;

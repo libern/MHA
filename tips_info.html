@@ -31,54 +31,43 @@
 
 <!-- Make sure all your bars are the first things in your <body> -->
 <header class="bar bar-nav">
-    <a class="icon icon-bars pull-left" href="#Modal_Filter"></a>
+    <a class="icon icon-left pull-left" href="tips.html" data-transition="slide-out"></a>
 
-    <a class="icon icon-gear pull-right" href="settings.html" data-transition="slide-in"></a>
-
-    <h1 class="title">Crime Trends Map</h1>
+    <h1 class="title">Prevention Tip List</h1>
 </header>
-
-<!-- Block button in standard bar fixed below top bar -->
-<div class="bar bar-standard bar-header-secondary">
-    <button class="btn btn-block">Block level button</button>
-</div>
 
 <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
 <div class="content">
-    <div id="Modal_Filter" class="modal">
-        <header class="bar bar-nav">
-            <a class="icon icon-check pull-right" href="#Modal_Filter"></a>
-
-            <h1 class="title">Show Crime Class</h1>
-        </header>
-
-        <div class="content">
-            <ul class="table-view">
-                <li class="table-view-cell">
-                    Item 1
-                    <div class="toggle">
-                        <div class="toggle-handle"></div>
-                    </div>
-                </li>
-                <li class="table-view-cell">
-                    Item 2
-                    <div class="toggle active">
-                        <div class="toggle-handle"></div>
-                    </div>
-                </li>
-                <li class="table-view-cell">
-                    Item 3
-                    <div class="toggle">
-                        <div class="toggle-handle"></div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <ul class="table-view list-item-margin">
+        <li class="table-view-cell">
+                Item 1
+        </li>
+        <li class="table-view-cell">
+                Item 2
+        </li>
+        <li class="table-view-cell">
+                Item 3
+        </li>
+        <li class="table-view-cell">
+                Item 4
+        </li>
+        <li class="table-view-cell">
+                Item 5
+        </li>
+        <li class="table-view-cell">
+                Item 6
+        </li>
+        <li class="table-view-cell">
+                Item 7
+        </li>
+        <li class="table-view-cell">
+                Item 8
+        </li>
+    </ul>
 </div>
 
 <nav class="bar bar-tab">
-    <a class="tab-item active" href="index.html">
+    <a class="tab-item" href="index.html">
         <span class="icon icon-crimes"></span>
         <span class="tab-label">Crimes</span>
     </a>
@@ -86,7 +75,7 @@
         <span class="icon icon-statistics"></span>
         <span class="tab-label">Statistics</span>
     </a>
-    <a class="tab-item" href="tips.html">
+    <a class="tab-item active" href="tips.html">
         <span class="icon icon-tips"></span>
         <span class="tab-label">Tips</span>
     </a>

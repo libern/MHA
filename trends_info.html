@@ -31,54 +31,27 @@
 
 <!-- Make sure all your bars are the first things in your <body> -->
 <header class="bar bar-nav">
-    <a class="icon icon-bars pull-left" href="#Modal_Filter"></a>
+    <a class="icon icon-left pull-left" href="trends.html" data-transition="slide-out"></a>
 
-    <a class="icon icon-gear pull-right" href="settings.html" data-transition="slide-in"></a>
-
-    <h1 class="title">Crime Trends Map</h1>
+    <h1 class="title">Latest Trends</h1>
 </header>
-
-<!-- Block button in standard bar fixed below top bar -->
-<div class="bar bar-standard bar-header-secondary">
-    <button class="btn btn-block">Block level button</button>
-</div>
 
 <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
 <div class="content">
-    <div id="Modal_Filter" class="modal">
-        <header class="bar bar-nav">
-            <a class="icon icon-check pull-right" href="#Modal_Filter"></a>
-
-            <h1 class="title">Show Crime Class</h1>
-        </header>
-
-        <div class="content">
-            <ul class="table-view">
-                <li class="table-view-cell">
-                    Item 1
-                    <div class="toggle">
-                        <div class="toggle-handle"></div>
-                    </div>
-                </li>
-                <li class="table-view-cell">
-                    Item 2
-                    <div class="toggle active">
-                        <div class="toggle-handle"></div>
-                    </div>
-                </li>
-                <li class="table-view-cell">
-                    Item 3
-                    <div class="toggle">
-                        <div class="toggle-handle"></div>
-                    </div>
-                </li>
-            </ul>
+    <div class="content-padded">
+        <div class="info-detail-box">
+            <div class="title-box">
+                Title
+            </div>
+            <div class="content-box">
+                Content
+            </div>
         </div>
     </div>
 </div>
 
 <nav class="bar bar-tab">
-    <a class="tab-item active" href="index.html">
+    <a class="tab-item" href="index.html">
         <span class="icon icon-crimes"></span>
         <span class="tab-label">Crimes</span>
     </a>
@@ -90,7 +63,7 @@
         <span class="icon icon-tips"></span>
         <span class="tab-label">Tips</span>
     </a>
-    <a class="tab-item" href="trends.html">
+    <a class="tab-item active" href="trends.html">
         <span class="icon icon-trends"></span>
         <span class="tab-label">Trends</span>
     </a>
