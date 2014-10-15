@@ -16,12 +16,94 @@
     <link href="css/mha.css" rel="stylesheet">
 
     <script src="vendor/jQuery/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
     <!-- Include the compiled Ratchet JS -->
     <script src="vendor/Ratchet/js/ratchet.js"></script>
     <script src="vendor/Ratchet/js/fingerblast.js"></script>
+
     <script type='text/javascript'>
         $(function () {
             var fb = new FingerBlast('body');
+
+
+            $("#form_submit_button").on("tap", function () {
+                console.log('hey');
+                var name = document.forms["register"]["name"].value;
+                var email = document.forms["register"]["email"].value;
+                var password = document.forms["register"]["password"].value;
+                var confirmPass = document.forms["register"]["confirm"].value;
+
+                var array = {name: name, email: email, password: password, confirmPass: confirmPass};
+                var alertText = "There is a problem: \n\n";
+                var text = "";
+
+                for (i in array) {
+                    if (array[i] == null || array[i] == "") {
+                        text = i + " is not filled in \n";
+                        alertText = alertText.concat(text);
+                    }
+                }
+
+                if (!RE_EMAIL.test(email)) {
+                    alertText += "\n------------------\n Invalid email format";
+                }
+                if (password != confirmPass) {
+                    alertText += "\nThe two password entries are different";
+                }
+                if (password.length <= 5) {
+                    alertText += "\n Password at least 6 character";
+                }
+                if($("#NPC").val()==0){
+                    alertText += "\n Please select an option in the NPC field";
+                }
+                if (alertText.length > 22) {
+                    alert(alertText);
+                    return false;
+                } else {
+                    postData = {
+                        fullname: $(".fullName").val(),
+                        email: $(".email").val(),
+                        password: $(".password").val(),
+                        confirm: $(".confirm").val(),
+                        NPC: $("#NPC").val()
+                    };
+                    $.ajax({
+                        type: "POST",
+                        url: "http://im.someline.com/mha/register.php",
+                        data: postData,
+                        dataType: "JSON",
+                        cache: false,
+                        success: function (data) {
+                            console.log(data);
+                            alert(data);
+                        }
+                    });
+                }
+
+            })
+
+            $.ajax({
+                type: "POST",
+                url: "http://im.someline.com/mha/npc.php",
+                dataType: "JSONP",
+                cache: false,
+                success: function (data) {
+                    $("#data").empty();
+                    console.log(data);///////
+                    $("#NPC").append("<option value='0'>select a NPC...</option>");
+                    for (i = 0; i < data.length; i++) {
+                        $("#NPC").append("<option value='" +
+                                data[i].id + "'>" +
+                                data[i].name + "</option>");
+                    }
+                    $("#data").trigger('change');
+                }
+            });
+
+            var RE_EMAIL = /^(\w+[\-\.])*\w+@(\w+\.)+[A-Za-z]+$/;
+
+
+            // everything above this line..
         });
     </script>
 </head>
@@ -33,18 +115,25 @@
     <a class="btn pull-right" href="login.html" data-transition="slide-in">
         Login
     </a>
+
     <h1 class="title">Register</h1>
 </header>
 
 <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
 <div class="content">
     <div class="content-padded">
-        <form>
-            <input type="text" placeholder="Email">
+        <form name="register">
+            <input type="text" name="email" placeholder="Email">
+            <input type="text" placeholder="Full Name">
             <input type="password" placeholder="Password">
             <input type="password" placeholder="Confirm Password">
-            <button class="btn btn-positive btn-block">Register</button>
+            <select id="NPC">
+            </select>
+
+
+            <button id="form_submit_button" class="btn btn-positive btn-block">Register</button>
         </form>
+
     </div>
 </div>
 
