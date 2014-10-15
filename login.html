@@ -16,12 +16,18 @@
     <link href="css/mha.css" rel="stylesheet">
 
     <script src="vendor/jQuery/jquery-1.11.1.min.js"></script>
+    <script src="vendor/jQuery/mobile/jquery.mobile-1.4.4.js"></script>
+
     <!-- Include the compiled Ratchet JS -->
     <script src="vendor/Ratchet/js/ratchet.js"></script>
     <script src="vendor/Ratchet/js/fingerblast.js"></script>
     <script type='text/javascript'>
         $(function () {
             var fb = new FingerBlast('body');
+
+            $("#loginBtn").on('tap', function () {
+                alert("hey")
+            });
         });
     </script>
 </head>
@@ -42,7 +48,7 @@
         <form>
             <input type="text" placeholder="Email">
             <input type="password" placeholder="Password">
-            <button class="btn btn-primary btn-block">Login</button>
+            <button id="loginBtn" class="btn btn-primary btn-block">Login</button>
         </form>
     </div>
 </div>

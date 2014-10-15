@@ -45,8 +45,10 @@
   height: 220px;
 }
 #MHA .content .table-view {
+  background-color: transparent;
   border-top: none;
   border-bottom: none;
+  margin-bottom: 80px;
 }
 #MHA .content .table-view .media-body {
   line-height: 24px;
@@ -71,4 +73,23 @@
 }
 #MHA .content .table-view .table-view-cell .trends-body .location {
   margin-left: 15px;
+}
+#MHA .content .info-detail-box {
+  background: linear-gradient(#f8f8f8, #efefef);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+#MHA .content .info-detail-box .title-box {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 30px;
+  border-bottom: solid 1px #b8b8b8;
+}
+#MHA .content .info-detail-box .content-box {
+  padding: 30px;
+}
+#MHA .segmented-control .control-item.active {
+  color: #ffffff;
+  background: linear-gradient(#3b7aaf, #2c6ba0);
 }

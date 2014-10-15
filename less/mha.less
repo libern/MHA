@@ -1,11 +1,13 @@
+@import "mixins.less";
+
 // By Libern
 
 #MHA {
-  backface-visibility:hidden;
-  -webkit-backface-visibility:hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   overflow: hidden;
   -ms-content-zooming: none;
-  -ms-touch-action:none;
+  -ms-touch-action: none;
 
   .bar-nav {
     background: transparent url(../images/navigation_bar_bg.png);
@@ -54,9 +56,10 @@
       height: 220px;
     }
     .table-view {
-//      background-color: transparent;
+      background-color: transparent;
       border-top: none;
       border-bottom: none;
+      margin-bottom: 80px;
       .media-body {
         line-height: 24px;
       }
@@ -66,16 +69,16 @@
         &:last-child {
           border-bottom: none;
         }
-//        background: -webkit-linear-gradient(#F8F8F8, #EFEFEF);
-//        background: -o-linear-gradient(#F8F8F8, #EFEFEF);
-//        background: -moz-linear-gradient(#F8F8F8, #EFEFEF);
+        //        background: -webkit-linear-gradient(#F8F8F8, #EFEFEF);
+        //        background: -o-linear-gradient(#F8F8F8, #EFEFEF);
+        //        background: -moz-linear-gradient(#F8F8F8, #EFEFEF);
         background: linear-gradient(#F8F8F8, #EFEFEF);
         //        background-image: url(../images/table_view_cell_bg.png);
         > a:not(.btn) {
-//          background-color: transparent;
+          //          background-color: transparent;
           &:active {
             color: #ffffff;
-//            background-image: url(../images/table_view_cell_highlighted_bg.png);
+            //            background-image: url(../images/table_view_cell_highlighted_bg.png);
             background: linear-gradient(#3B7AAF, #2C6BA0);
             &::after {
               color: #ffffff;
@@ -92,5 +95,24 @@
         }
       }
     }
+    .info-detail-box {
+      background: linear-gradient(#F8F8F8, #EFEFEF);
+      .rounded-corners(4px);
+      .title-box {
+        font-size: 24px;
+        font-weight: bold;
+        padding: 30px;
+        border-bottom: solid 1px #b8b8b8;
+      }
+      .content-box {
+        padding: 30px;
+      }
+    }
+  }
+
+  .segmented-control .control-item.active {
+    //    background-color: transparent;
+    color: #ffffff;
+    background: linear-gradient(#3B7AAF, #2C6BA0);
   }
 }
