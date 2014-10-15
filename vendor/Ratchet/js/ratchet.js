@@ -374,10 +374,6 @@
             //  xhr.status === 200 ? success(xhr, options) : failure(options.url);
             //}
             if (xhr.readyState == 4) {
-                console.log(xhr);
-                console.log(xhr.status);
-                console.log(options.url.indexOf('file:///') != -1);
-                alert("hey")
                 xhr.status == 200 || (xhr.status == 0 && options.url.indexOf('file:///') != -1) ? success(xhr, options) : failure(options.url);
             }
         };
@@ -966,4 +962,3 @@
     });
 
 }());
-alert("hey wah");
