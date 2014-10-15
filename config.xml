@@ -24,6 +24,7 @@
     <preference name="phonegap-version" value="3.5.0"/>
     <preference name="target-device" value="universal"/>
     <preference name="orientation" value="portrait"/>
+    <preference name="fullscreen" value="true"/>
     <!--<preference name="orientation" value="landscape" />-->
 
     <!-- Splash Screens -->
