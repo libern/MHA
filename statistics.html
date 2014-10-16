@@ -27,7 +27,27 @@
         });
     </script>
     <script>
-        localStorage.setItem("lastname", "Smith");
+        $(function () {
+            $("#one").on("tap", function () {
+                localStorage.setItem("record", "one");
+                window.location.href="statistics_info.html"
+            });
+            $("#two").on("tap", function () {
+                localStorage.setItem("record", "two");
+                window.location.href="statistics_info.html"
+            });
+            $("#three").on("tap", function () {
+                localStorage.setItem("record", "three");
+                window.location.href="statistics_info.html"
+            });
+            $("#four").on("tap", function () {
+                localStorage.setItem("record", "four");
+                window.location.href="statistics_info.html"
+            });
+
+
+
+        });
 
     </script>
 </head>
@@ -45,29 +65,29 @@
     </div>
     <ul class="table-view">
         <li class="table-view-cell">
-            <a class="navigate-right" href="statistics_info.html" data-transition="slide-in">
+            <a id="one" class="navigate-right" href="statistics_info.html" data-transition="slide-in">
                 Overall Crimes in Singapore
             </a>
         </li>
         <li class="table-view-cell">
-            <a class="navigate-right" href="statistics_info.html" data-transition="slide-in">
+            <a id="two" class="navigate-right" href="statistics_info.html" data-transition="slide-in">
                 Crimes in Neighbourhoods
             </a>
         </li>
         <li class="table-view-cell">
-            <a class="navigate-right" href="statistics_info.html" data-transition="slide-in">
+            <a id="three" class="navigate-right" href="statistics_info.html" data-transition="slide-in">
                 Types of Crime Occurrence
             </a>
         </li>
-        <li class="table-view-cell">
+        <li id="four" class="table-view-cell">
             <a class="navigate-right" href="statistics_info.html" data-transition="slide-in">
                 Neighbourhood Crime Trends
             </a>
         </li>
         <!--<li class="table-view-cell">-->
-            <!--<a class="navigate-right" href="statistics_info.html" data-transition="slide-in">-->
-                <!--Item 5-->
-            <!--</a>-->
+        <!--<a class="navigate-right" href="statistics_info.html" data-transition="slide-in">-->
+        <!--Item 5-->
+        <!--</a>-->
         <!--</li>-->
     </ul>
 </div>
