@@ -23,8 +23,239 @@
     <script src="vendor/Ratchet/js/fingerblast.js"></script>
     <script type='text/javascript'>
         $(function () {
+            console.log(localStorage.getItem("record"));
+//            alert(localStorage.getItem("record"));
             var fb = new FingerBlast('body');
+
+            $("#thingOne").on("tap", function () {
+                $("#chart_div").show();
+                $("#column").hide();
+            });
+
+
+            $("#thingTwo").on("tap", function () {
+
+                $("#chart_div").hide();
+                $("#column").show();
+            });
+
+
+
+
+
         });
+
+    </script>
+
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <script>
+
+
+        if (localStorage.getItem("record") == "one") {
+
+            lineChart();
+            columnChart();
+            $("#chart_div").show();
+            $("#column").hide();
+
+        }
+
+
+
+
+        //line chart
+        function lineChart() {
+            google.load("visualization", "1", {packages: ["corechart"]});
+            google.setOnLoadCallback(drawChart);
+            function drawChart() {
+
+
+                var
+                        d2 = [],
+                        point
+
+
+                $.ajax({
+                    url: "http://im.someline.com/mha/demo1.php",
+                    dataType: "jsonp",
+                    success: function (data) {
+                        var dataString = JSON.stringify(data, null, 4);
+                        console.log(dataString)
+
+                        var xx1 = [];
+                        var chk = "";
+                        xx1.push('year');
+                        $.each(data, function (key, val) {
+                            if (val.class != chk) {
+                                xx1.push(val.class);
+                            }
+                            chk = val.class;
+                        });
+                        d2.push(xx1)
+
+                        //get all the years
+                        var all_years = []
+                        var chk1 = "";
+                        $.each(data, function (key, val) {
+
+                            if (val.year != chk1) {
+                                all_years.push(val.year)
+                            } else {
+                                return false;
+                            }
+                            if (key == 0) {
+                                chk1 = val.year;
+                            }
+                        });
+                        console.log(chk1);
+                        console.log(all_years)
+                        var A1 = [];
+
+                        for (var i in all_years) {
+
+                            A1.push(all_years[i])
+//                        console.log(all_years[i])
+                            $.each(data, function (key, val) {
+
+
+                                if (val.year == all_years[i]) {
+                                    A1.push(parseInt(val.occurrence));
+                                }
+                            });
+                            d2.push(A1)
+                            console.log(A1);
+                            A1 = [];
+                        }
+
+                        console.log(d2)
+//                    $.each(data, function (key, val) {
+//                        point = [(val.year) , (val.count*10)];
+//                        d2.push(point);
+//                    });
+
+
+                        var data = google.visualization.arrayToDataTable(
+                                d2);
+
+                        var options = {
+                            title: 'Types of crimes occurrence by year',
+                            curveType: 'function',
+                            legend: 'right',
+                            hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}
+//                        series: [{color: 'black', visibleInLegend: true}, {}, {},
+//                            {color: 'red', visibleInLegend: false}]
+
+
+//                              legend: { position: 'bottom' }
+
+//                            // Allow multiple simultaneous selections.
+//                            selectionMode: 'multiple',
+//                            // Trigger tooltips on selections.
+//                            tooltip: { trigger: 'selection' },
+//                            // Group selections by x-value.
+//                            aggregationTarget: 'category'
+
+                        };
+
+                        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+                        chart.draw(data, options);
+
+                    }
+
+
+                });
+
+
+            }
+        }
+
+
+
+        //column chart
+        function columnChart(){
+            google.load("visualization", "1", {packages:["corechart"]});
+            google.setOnLoadCallback(drawChart);
+            function drawChart() {
+                var
+                        d2 = [],
+                        point
+
+
+                $.ajax({
+                    url: "http://im.someline.com/mha/demo1.php",
+                    dataType: "jsonp",
+                    success: function (data) {
+                        var dataString = JSON.stringify(data, null, 4);
+                        console.log(dataString)
+
+                        var xx1 = [];
+                        var chk = "";
+                        xx1.push('year');
+                        $.each(data, function (key, val) {
+                            if (val.class != chk) {
+                                xx1.push(val.class);
+                            }
+                            chk = val.class;
+                        });
+                        d2.push(xx1)
+
+                        //get all the years
+                        var all_years = []
+                        var chk1 = "";
+                        $.each(data, function (key, val) {
+
+                            if (val.year != chk1) {
+                                all_years.push(val.year)
+                            } else {
+                                return false;
+                            }
+                            if (key == 0) {
+                                chk1 = val.year;
+                            }
+                        });
+                        console.log(chk1);
+                        console.log(all_years)
+                        var A1 = [];
+
+                        for (var i in all_years) {
+
+                            A1.push(all_years[i])
+//                        console.log(all_years[i])
+                            $.each(data, function (key, val) {
+
+
+                                if (val.year == all_years[i]) {
+                                    A1.push(parseInt(val.occurrence));
+                                }
+                            });
+                            d2.push(A1)
+                            console.log(A1);
+                            A1 = [];
+                        }
+
+                        console.log(d2)
+
+                        var data = google.visualization.arrayToDataTable(d2);
+
+                        var options = {
+                            title: 'Types of crimes occurrence by year',
+                            hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}
+//                isStacked: true // Stacked graph or normal：delete this line for normal
+                        };
+
+                        var chart = new google.visualization.ColumnChart(document.getElementById('column'));
+
+                        chart.draw(data, options);
+
+                    }
+                });
+            }
+        }
+
+
     </script>
 </head>
 <body id="MHA">
@@ -39,24 +270,29 @@
 <!-- Block button in standard bar fixed below top bar -->
 <div class="bar bar-standard bar-header-secondary">
     <div class="segmented-control">
-        <a class="control-item active">Thing one</a>
-        <a class="control-item">Thing two</a>
+        <a id="thingOne" class="control-item active">Thing one</a>
+        <a id="thingTwo" class="control-item">Thing two</a>
         <a class="control-item">Thing three</a>
     </div>
 </div>
 
 <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
 <div class="content">
-    <div class="content-padded">
+    <div class="content-padded" style="height: 75%">
         <div class="info-detail-box">
             <div class="title-box">
-                Title
+                <!--Title-->                Overall Crimes in Singapore
+
             </div>
-            <div class="content-box">
-                Graph
-            </div>
+            <!--<div class="content-box">-->
+            <!--Graph-->
+            <!--</div>-->
         </div>
+        <div id="chart_div" style="width: 100%; height: 100%;"></div>
+        <div id="column" style="width: 100%; height: 100%;"></div>
+
     </div>
+
 </div>
 
 <nav class="bar bar-tab">
