@@ -18,10 +18,10 @@
 
     <icon src="icon.png" gap:role="default"/>
 
+    <preference name="phonegap-version" value="3.6.3"/>
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
 
-    <preference name="phonegap-version" value="3.5.0"/>
     <preference name="target-device" value="universal"/>
     <preference name="orientation" value="portrait"/>
     <preference name="fullscreen" value="true"/>
