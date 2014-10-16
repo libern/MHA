@@ -26,20 +26,21 @@
         $(function () {
             var fb = new FingerBlast('body');
 
-
             $("#form_submit_button").on("tap", function () {
                 console.log('hey');
                 var name = document.forms["register"]["name"].value;
                 var email = document.forms["register"]["email"].value;
                 var password = document.forms["register"]["password"].value;
                 var confirmPass = document.forms["register"]["confirm"].value;
+                var NPC = $("#NPC").val();
 
-                var array = {name: name, email: email, password: password, confirmPass: confirmPass};
+                var postValues = {"fullname": name, "email": email, "password": password,
+                    "confirmPass": confirmPass, "NPC": NPC};
                 var alertText = "There is a problem: \n\n";
                 var text = "";
 
-                for (i in array) {
-                    if (array[i] == null || array[i] == "") {
+                for (i in postValues) {
+                    if (postValues[i] == null || postValues[i] == "") {
                         text = i + " is not filled in \n";
                         alertText = alertText.concat(text);
                     }
@@ -61,13 +62,7 @@
                     alert(alertText);
                     return false;
                 } else {
-                    postData = {
-                        fullname: $(".fullName").val(),
-                        email: $(".email").val(),
-                        password: $(".password").val(),
-                        confirm: $(".confirm").val(),
-                        NPC: $("#NPC").val()
-                    };
+                    postData = postValues;
                     $.ajax({
                         type: "POST",
                         url: "http://im.someline.com/mha/register.php",
@@ -77,6 +72,7 @@
                         success: function (data) {
                             console.log(data);
                             alert(data);
+                            console.log(postData);
                         }
                     });
                 }
@@ -86,7 +82,7 @@
             $.ajax({
                 type: "POST",
                 url: "http://im.someline.com/mha/npc.php",
-                dataType: "JSONP",
+                dataType: "JSON",
                 cache: false,
                 success: function (data) {
                     $("#data").empty();
@@ -125,9 +121,10 @@
     <div class="content-padded">
         <form name="register">
             <input type="text" name="email" placeholder="Email">
-            <input type="text" placeholder="Full Name">
-            <input type="password" placeholder="Password">
-            <input type="password" placeholder="Confirm Password">
+            <input type="text" name="name" placeholder="Full Name">
+            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="confirm" placeholder="Confirm Password">
+
             <select id="NPC">
             </select>
 

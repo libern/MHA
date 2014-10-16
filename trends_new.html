@@ -24,6 +24,65 @@
     <script type='text/javascript'>
         $(function () {
             var fb = new FingerBlast('body');
+
+            $.ajax({
+                type: "POST",
+                url: "http://im.someline.com/mha/area.php",
+                dataType: "JSON",
+                cache: false,
+                success: function (data) {
+                    $("#data").empty();
+                    console.log(data);///////
+                    $("#area").append("<option value='0'>Select a type</option>");
+                    for (i = 0; i < data.length; i++) {
+                        $("#area").append("<option value='" +
+                                data[i].id + "'>" +
+                                data[i].name + "</option>");
+                    }
+                    $("#data").trigger('change');
+                }
+            });
+
+            $("#form_submit_button").on("tap", function () {
+                console.log('hey');
+                var message = document.forms["trend"]["msg"].value;
+                var area_id = $("#area").val();
+                var token = localStorage.getItem("token");
+
+                var postValues = {"message": message, "area_id": area_id, "token": token};
+                var alertText = "There is a problem: \n\n";
+                var text = "";
+
+                for (i in postValues) {
+                    if (postValues[i] == null || postValues[i] == "") {
+                        text = i + " is not filled in \n";
+                        alertText = alertText.concat(text);
+                    }
+                }
+
+                if (alertText.length > 22) {
+                    alert(alertText);
+                    return false;
+                } else {
+                    postData = postValues;
+                    $.ajax({
+                        type: "POST",
+                        url: "http://im.someline.com/mha/addTrend.php",
+                        data: postData,
+                        dataType: "JSON",
+                        cache: false,
+                        success: function (data) {
+                            console.log(data);
+                            alert(data);
+                            console.log(postData);
+                            if (data.status = 1) {
+                                console.log('Successful');
+                            }
+                        }
+                    });
+                }
+            })
+
         });
     </script>
 </head>
@@ -38,11 +97,11 @@
 <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
 <div class="content">
     <div class="content-padded">
-        <form>
-            <input type="text" placeholder="Full name">
-            <input type="search" placeholder="Search">
-            <textarea rows="5"></textarea>
-            <button class="btn btn-positive btn-block">Choose existing</button>
+        <form name="trend">
+            <textarea rows="5" placeholder="Message" name="msg"></textarea>
+            <select id="area"> </select>
+
+            <button id="form_submit_button" class="btn btn-positive btn-block">Upload</button>
         </form>
     </div>
 </div>

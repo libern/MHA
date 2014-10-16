@@ -25,8 +25,38 @@
         $(function () {
             var fb = new FingerBlast('body');
 
+
             $("#loginBtn").on('tap', function () {
-                alert("hey")
+                alert("hey");
+                var email = document.forms["login"]["email"].value;
+                var password = document.forms["login"]["password"].value;
+
+                var postValues = {"email": email, "password": password};
+                postData = postValues;
+                $.ajax({
+                    type: "POST",
+                    url: "http://im.someline.com/mha/login.php",
+                    data: postData,
+                    dataType: "JSON",
+                    cache: false,
+                    success: function (data) {
+                        console.log(data);
+                        alert(data);
+                        console.log(postData);
+                        if (data.status == 1) {
+                            if (typeof(Storage) != "undefined") {
+                                localStorage.setItem("token", data.token);
+                                alert(localStorage.getItem("token"));
+                                window.location.href="settings.html";
+                            } else {
+                                alert("Sorry, your browser does not support Web Storage...");
+                            }
+                        }
+                    }, fail: function () {
+                        alert("error")
+                    }
+
+                });
             });
         });
     </script>
@@ -42,12 +72,11 @@
     <h1 class="title">Login</h1>
 </header>
 
-<!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
 <div class="content">
     <div class="content-padded">
-        <form>
-            <input type="text" placeholder="Email">
-            <input type="password" placeholder="Password">
+        <form name="login">
+            <input type="text" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
             <button id="loginBtn" class="btn btn-primary btn-block">Login</button>
         </form>
     </div>

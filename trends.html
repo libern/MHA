@@ -24,6 +24,39 @@
     <script type='text/javascript'>
         $(function () {
             var fb = new FingerBlast('body');
+
+            $.ajax({
+                type: "POST",
+                url: "http://im.someline.com/mha/trend.php",
+                dataType: "JSON",
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+
+                    $.each( data, function(key, val){
+                        console.log(val);
+                    })
+
+//                    for (i = 0; i < data.length; i++) {
+//                        document.getElementById("trendList").html('<li class="table-view-cell media"><a class="navigate-right" href="trends_info.html" data-transition="slide-in"> <div class="media-body trends-body"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt utlabore et dolore. Lorem ipsum dolor sit amet. <p>Woodlands Neighbourhood <br/>2014/10/15</p>  </div> </a>  </li>');
+//
+//                        console.log(data);
+//
+//                    }
+
+
+                }
+            });
+//            <li class="table-view-cell media">
+//                    <a class="navigate-right" href="trends_info.html" data-transition="slide-in">
+//                    <div class="media-body trends-body">
+//                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+//            labore et dolore. Lorem ipsum dolor sit amet.
+//                    <p>Woodlands Neighbourhood <br/>2014/10/15</p>
+//            </div>
+//            </a>
+//            </li>
+
         });
     </script>
 </head>
@@ -39,33 +72,34 @@
 <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
 <div class="content">
     <ul class="table-view">
-        <li class="table-view-cell media">
-            <a class="navigate-right" href="trends_info.html" data-transition="slide-in">
-                <div class="media-body trends-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore. Lorem ipsum dolor sit amet.
-                    <p>Woodlands Neighbourhood <br/>2014/10/15</p>
-                </div>
-            </a>
-        </li>
-        <li class="table-view-cell media">
-            <a class="navigate-right" href="trends_info.html" data-transition="slide-in">
-                <div class="media-body trends-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore. Lorem ipsum dolor sit amet.
-                    <p>Woodlands Neighbourhood <br/>2014/10/15</p>
-                </div>
-            </a>
-        </li>
-        <li class="table-view-cell media">
-            <a class="navigate-right" href="trends_info.html" data-transition="slide-in">
-                <div class="media-body trends-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore. Lorem ipsum dolor sit amet.
-                    <p>Woodlands Neighbourhood <br/>2014/10/15</p>
-                </div>
-            </a>
-        </li>
+        <div id="trendList"></div>
+        <!--<li class="table-view-cell media">-->
+        <!--<a class="navigate-right" href="trends_info.html" data-transition="slide-in">-->
+        <!--<div class="media-body trends-body">-->
+        <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut-->
+        <!--labore et dolore. Lorem ipsum dolor sit amet.-->
+        <!--<p>Woodlands Neighbourhood <br/>2014/10/15</p>-->
+        <!--</div>-->
+        <!--</a>-->
+        <!--</li>-->
+        <!--<li class="table-view-cell media">-->
+        <!--<a class="navigate-right" href="trends_info.html" data-transition="slide-in">-->
+        <!--<div class="media-body trends-body">-->
+        <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut-->
+        <!--labore et dolore. Lorem ipsum dolor sit amet.-->
+        <!--<p>Woodlands Neighbourhood <br/>2014/10/15</p>-->
+        <!--</div>-->
+        <!--</a>-->
+        <!--</li>-->
+        <!--<li class="table-view-cell media">-->
+        <!--<a class="navigate-right" href="trends_info.html" data-transition="slide-in">-->
+        <!--<div class="media-body trends-body">-->
+        <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut-->
+        <!--labore et dolore. Lorem ipsum dolor sit amet.-->
+        <!--<p>Woodlands Neighbourhood <br/>2014/10/15</p>-->
+        <!--</div>-->
+        <!--</a>-->
+        <!--</li>-->
     </ul>
 </div>
 
