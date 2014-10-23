@@ -45,7 +45,7 @@
   height: 220px;
 }
 #MHA .content .table-view {
-  background-color: transparent;
+  /*background-color: transparent;*/
   border-top: none;
   border-bottom: none;
   margin-bottom: 80px;
@@ -63,7 +63,7 @@
   border-top: none;
   border-bottom: 1px solid #b6bcbe;
   background: linear-gradient(#f8f8f8, #efefef);
-    background-color: #f8f8f8;
+    /*background-color: #f8f8f8;*/
 }
 #MHA .content .table-view .table-view-cell:last-child {
   border-bottom: none;
