@@ -24,6 +24,18 @@
     <script type='text/javascript'>
         $(function () {
             var fb = new FingerBlast('body');
+
+
+            $.ajax({
+                type: "POST",
+                url: "http://im.someline.com/mha/trend.php",
+                dataType: "JSON",
+                cache: false,
+                success: function (data) {
+
+
+                }
+            });
         });
     </script>
 </head>
