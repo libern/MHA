@@ -63,6 +63,7 @@
   border-top: none;
   border-bottom: 1px solid #b6bcbe;
   background: linear-gradient(#f8f8f8, #efefef);
+    background-color: #f8f8f8;
 }
 #MHA .content .table-view .table-view-cell:last-child {
   border-bottom: none;
