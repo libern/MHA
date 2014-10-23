@@ -26,7 +26,7 @@
   background-image: url(../images/tab_bar_item_crimes.png);
 }
 #MHA .bar-tab .tab-item .icon.icon-statistics {
-  background-image: url(../images/tab_bar_item_statistics.png);
+  background-image: url(../images/tab_bar_item_settings.png);
 }
 #MHA .bar-tab .tab-item .icon.icon-tips {
   background-image: url(../images/tab_bar_item_tips.png);
@@ -62,7 +62,7 @@
 #MHA .content .table-view .table-view-cell {
   border-top: none;
   border-bottom: 1px solid #b6bcbe;
-  background: linear-gradient(#f8f8f8, #efefef);
+  /*background: linear-gradient(#f8f8f8, #efefef);*/
     /*background-color: #f8f8f8;*/
 }
 #MHA .content .table-view .table-view-cell:last-child {
@@ -70,7 +70,7 @@
 }
 #MHA .content .table-view .table-view-cell > a:not(.btn):active {
   color: #ffffff;
-  background: linear-gradient(#3b7aaf, #2c6ba0);
+  /*background: linear-gradient(#3b7aaf, #2c6ba0);*/
 }
 #MHA .content .table-view .table-view-cell > a:not(.btn):active::after {
   color: #ffffff;
